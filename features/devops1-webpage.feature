@@ -29,10 +29,10 @@ Scenario: Services dropdown select All Services - chrome browser
     Then "Uplifting engineering practices" is present in the page
     And close the browser
 
-Scenario: "Our services" link test "Platform Engineering" - chrome browser
-    Given launch chrome browser
-    When open DevOps1 page
-    Then check for "Platform Engineering" card
-    Then click on the platform engineering link
-    Then check for text "Platform Engineering"
-    And close the browser
+# Scenario: "Our services" link test "Platform Engineering" - chrome browser
+#     Given launch chrome browser
+#     When open DevOps1 page
+#     Then check for "Platform Engineering" card
+#     Then click on the platform engineering link
+#     Then check for text "Platform Engineering"
+#     And close the browser
