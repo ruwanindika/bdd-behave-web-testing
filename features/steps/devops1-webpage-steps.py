@@ -11,7 +11,10 @@ from selenium.webdriver.chrome.options import Options
 
 @given(u'launch chrome browser')
 def step_impl(context):
-    options = Options()
+    
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    
     options.headless = True
     context.driver=webdriver.Chrome(options=options)
 
