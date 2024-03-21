@@ -88,9 +88,9 @@ def step_impl(context):
 
 @then(u'get hero items list')
 def step_impl(context):
-    hero_title_list = context.driver.find_element(By.XPATH,'//div[@class="hero-home-content"]//div[@class="hero-tile"]')
-    print(f"----> {hero_title_list.text}")
-    assert 0
+    hero_title_list = context.driver.find_element(By.XPATH,'//div[@class="section-intro"]//h2[@class="display-3 text-white"]')
+    # hero_title_list = context.driver.find_element(By.XPATH,'//div[@class="hero-home-content"]//div[@class="hero-tile"]')
+    assert hero_title_list.text == "Our Services"
 
 
 @then(u'check for 3 items in the list')
