@@ -4,3 +4,4 @@ selenium
 webdriver-manager
 pytest-html
 allure-pytest
+behave

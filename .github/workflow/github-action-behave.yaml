@@ -25,7 +25,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
       
-
       # Runs a single command using the runners shell
-      - name: Run a Python script
-        run: python my-script.py
+      - name: Run behave
+        run: behave
