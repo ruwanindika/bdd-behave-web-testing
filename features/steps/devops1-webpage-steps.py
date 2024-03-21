@@ -9,8 +9,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options 
 
 
-
-
 @given(u'launch chrome browser')
 def step_impl(context):
     options = Options()
@@ -88,4 +86,13 @@ def step_impl(context):
     services_page_title = context.driver.find_element(By.XPATH,'//div[@class="hero-content"]//h1[@class="display-1 text-white"]').text
     assert services_page_title == "Empowering innovation with solid engineering"
 
-    
+@then(u'get hero items list')
+def step_impl(context):
+    hero_title_list = context.driver.find_element(By.XPATH,'//div[@class="hero-home-content"]//div[@class="hero-tile"]')
+    print(f"----> {hero_title_list.text}")
+    assert 0
+
+
+@then(u'check for 3 items in the list')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then check for 3 items in the list')
