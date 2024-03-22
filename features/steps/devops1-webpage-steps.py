@@ -13,6 +13,8 @@ from selenium.webdriver.chrome.options import Options
 def step_impl(context):
     
     options = webdriver.ChromeOptions()
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--start-maximized")
     options.add_argument("--headless")
     
     options.headless = True
