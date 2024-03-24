@@ -93,9 +93,21 @@ def step_impl(context):
 
 @then(u'get hero items list')
 def step_impl(context):
-    hero_title_list = context.driver.find_element(By.XPATH,'//div[@class="section-intro"]//h2[@class="display-3 text-white"]')
-    # hero_title_list = context.driver.find_element(By.XPATH,'//div[@class="hero-home-content"]//div[@class="hero-tile"]')
-    assert hero_title_list.text == "Our Services"
+    hero_title_list_class_one = context.driver.find_elements(By.XPATH,'//div[@class="hero-tile"]//p[@class="text-large text-white"]')
+    hero_title_list_class_two = context.driver.find_elements(By.XPATH,'//div[@class="hero-tile fade-in"]//p[@class="text-large text-white"]')
+    hero_item_list = []
+
+    for i in hero_title_list_class_one:
+        hero_item_list.append(i.get_attribute('innerHTML'))
+
+    for j in hero_title_list_class_two:
+        hero_item_list.append(j.get_attribute('innerHTML'))
+
+    hero_item_list_from_page = ['Build Fearlessly: Engineer secure experiences for your customers at scale.\n            ',
+                                'Engineer high-quality products by leveraging data-driven decision-making,\n              and seamless integration.',
+                                'AI powered cloud and platform solutions to enhance your build teams\n              velocity and efficiency']
+    
+    assert hero_item_list_from_page == hero_item_list
 
 
 @then(u'check for 3 items in the list')
